@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "ddx-voc",
-      "source": ".",
+      "source": "./plugin",
       "description": "DDX Voice of Customer tools for searching, creating, and analyzing customer feedback",
       "version": "1.0.0"
     }
