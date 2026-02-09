@@ -1,0 +1,17 @@
+{
+  "name": "medscout",
+  "owner": {
+    "name": "MedScout"
+  },
+  "metadata": {
+    "description": "DDX Voice of Customer tools and slash commands for Claude Code"
+  },
+  "plugins": [
+    {
+      "name": "ddx-voc",
+      "source": ".",
+      "description": "DDX Voice of Customer tools for searching, creating, and analyzing customer feedback",
+      "version": "1.0.0"
+    }
+  ]
+}
