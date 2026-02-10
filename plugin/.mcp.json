@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "ddx-voc": {
+    "ddx": {
       "url": "https://ddx.medscout.io/mcp",
       "headers": {
         "Authorization": "Bearer ${DDX_API_TOKEN}"
