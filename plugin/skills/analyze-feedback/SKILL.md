@@ -6,8 +6,11 @@ description: "Analyze unstructured customer feedback (meeting notes, transcripts
 
 Use the `analyze_feedback` prompt to guide this workflow, or follow these steps:
 
-1. **Get the feedback** — Ask the user to paste meeting notes, transcripts, or emails
-2. **Parse** using `parse_feedback` with optional company_id for context
-3. **Review proposals** — Show each extracted item with match status (existing vs new)
-4. **Execute with approval** — Create new items with `create_voc_item` or link to existing with `add_company_to_voc_item`
-5. **Summarize** — Show a table of all actions taken
+1. **Get the feedback text** from the user (meeting notes, transcript excerpt, email, etc.)
+2. **Identify the company** if mentioned, using `search_companies`
+3. **Parse the feedback** using `parse_feedback` to extract structured items with match proposals
+4. **Present proposals** to the user:
+   - Existing matches: show the matched item and similarity score
+   - New items: show the proposed title and problem statement
+5. **Execute approved proposals**: create new items or add companies to existing ones
+6. **Summarize** all actions taken
