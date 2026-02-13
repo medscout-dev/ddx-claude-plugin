@@ -35,10 +35,10 @@ Copy the JSON config from the [setup page](https://ddx.medscout.io/settings/mcp/
 
 | Feature | Claude Code | Claude Desktop |
 |---------|:-----------:|:--------------:|
-| 18 MCP tools | Yes | Yes |
+| 21 MCP tools | Yes | Yes |
 | 7 resources | Yes | Yes |
-| 4 prompts | Yes | Yes |
-| 6 skills (`/submit-voc`, etc.) | Yes | No |
+| 5 prompts | Yes | Yes |
+| 7 skills (`/submit-voc`, etc.) | Yes | No |
 | VOC Analyst agent | Yes | No |
 | GTM Research Analyst agent | Yes | No |
 
@@ -52,6 +52,7 @@ Skills are guided workflows you trigger with slash commands in Claude Code.
 | `/submit-voc` | Gathers details, searches for duplicates, then creates or matches to an existing VOC item |
 | `/analyze-feedback` | Paste meeting notes, transcripts, or emails — extracts structured VOC items with duplicate matching |
 | `/voc-search` | Search items, browse themes, analyze trends, query transcripts, view company feedback history |
+| `/merge-voc` | Merge two VOC items — AI-suggested content, target recommendation, full relationship transfer |
 
 ### Platform Skills
 | Skill | What it Does |
@@ -72,6 +73,7 @@ Skills are guided workflows you trigger with slash commands in Claude Code.
 - `get_voc_item` — Full item details with companies, themes, tags, and comments
 - `create_voc_item` — Create a new VOC item (auto-generates embeddings)
 - `add_company_to_voc_item` — Associate a company with priority and context
+- `add_attachment_to_voc_item` — Upload a file (image, PDF, etc.) to a VOC item from a URL
 - `search_companies` — Find companies by name, filter by health status
 
 ### Analytics
@@ -88,6 +90,10 @@ Skills are guided workflows you trigger with slash commands in Claude Code.
 
 ### Platform Feedback
 - `submit_platform_feedback` — Post feedback or bug reports about DDX to #feedback-ddx Slack channel
+
+### VOC Merge
+- `suggest_merge` — AI-suggested merge content with target recommendation and relationship preview
+- `execute_merge` — Execute the merge with full relationship transfer (companies, themes, tags, features, attachments, comments, mentions)
 
 ### GTM Research
 - `list_research_packs` — List research packs with company and report summaries
@@ -128,6 +134,7 @@ You can ask questions in natural language — no slash commands required:
 "Generate research for company XYZ"
 "What calls mentioned data exports this month?"
 "Parse this meeting notes into VOC items: ..."
+"Merge VOC items 123 and 456"
 ```
 
 ## How It Works
@@ -166,6 +173,7 @@ plugin/
 │   ├── submit-voc/         # /submit-voc skill
 │   ├── analyze-feedback/   # /analyze-feedback skill
 │   ├── voc-search/         # /voc-search skill
+│   ├── merge-voc/          # /merge-voc skill
 │   ├── feedback/           # /feedback skill
 │   ├── research-search/    # /research-search skill
 │   └── generate-research/  # /generate-research skill
